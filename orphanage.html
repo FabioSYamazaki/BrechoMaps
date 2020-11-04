@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brechó da Rê | brechó Maps</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+  <link rel="icon" href="logo-icon.png" />
+
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="sidebar.css" />
+  <link rel="stylesheet" href="map.css" />
+  <link rel="stylesheet" href="buttons.css" />
+  <link rel="stylesheet" href="page-orphanage.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="page-orphanage">
+    <aside class="animate-right sidebar">
+
+      <img src="logoonly.png" alt="Happy">
+
+      <footer>
+        <button onclick="history.back()">
+          <img src="arrow-back.svg" alt="Voltar">
+        </button>
+      </footer>
+
+    </aside>
+
+    <main class="animate-appear with-sidebar">
+      <div class="orphanage-details">
+        <img src="frentere.png" alt="{{orphanage.name}}" />
+
+        <div class="images">
+          {{#each orphanage.images }}
+          <button onclick="selectImage(event)" class="active" type="button">
+            <img src="frentere.png" alt="{{orphanage.name}}" />
+          </button>
+          {{/each}}
+          <button onclick="selectImage(event)" class="active" type="button">
+            <img src="dentrore.png" alt="{{orphanage.name}}" />
+          </button>
+        </div>
+
+        <div class="orphanage-details-content">
+          <h1>Brechó da Rêh</h1>
+
+          <p>Brechózinho da super simpática dona Rêh</p>
+          <p>Tem de tudo um pouquinho, e todo dia tem coisa diferente</p>
+          <p>Vem conferir e traga sempre um sorriso no rosto!</p>
+          <div class="map-container">
+            <div id="mapid"></div>
+            <span data-lat="-23.577569488943364" data-lng="-46.742820146824994"></span>
+            <footer>
+              <a target="_blank" href="https://www.google.com/maps/dir//Brechó+da+Rêh,+Av.+Eng.+Heitor+Antônio+Eiras+García,+757+-+Jardim+Bonfiglioli,+São+Paulo+-+SP,+05588-001/@-23.5771701,-46.7431032,20z/data=!4m9!4m8!1m0!1m5!1m1!1s0x94ce57713733fa31:0x60daa8d4459b63d7!2m2!1d-46.7429919!2d-23.5771725!3e0">Ver
+                rotas no Google Maps</a>
+            </footer>
+          </div>
+
+          <hr />
+
+          <h2>Informações</h2>
+
+          <p>Seja bem vindo!
+            Aceitamos cartão
+          </p>
+
+          <div class="open-details">
+            <div class="hour">
+              <img src="clock.svg" alt="Horários" />
+              Seg à Sex das 09:30 – 19:00
+            </div>
+
+            
+            <div class="open-on-weekends open">
+              <img src="info-red.svg" alt="Informaçao" />
+              Sábado das 9:30 - 15:00
+              <p></p>
+              Não abrimos no domingo
+            </div>
+            
+          </div>
+
+          <a href="https://api.whatsapp.com/send?l=pt_BR&phone=1121550060&text=Oi, é do Brechó da Rê?" target="_blank"
+            class="primary-button" type="button">
+            <img src="whatsapp.svg" alt="Chamar no whatsapp" />
+            Entrar em contato
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="page-orphanage.js"></script>
+</body>
+
+</html>
